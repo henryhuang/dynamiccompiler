@@ -1,4 +1,4 @@
-package cnhalo.dynamiccompiler;
+package com.github.henryhuang.dynamiccompiler;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -12,11 +12,11 @@ import javax.tools.JavaFileObject;
 import javax.tools.ToolProvider;
 
 /**
- * build a class from code
- *
- * @author HuangYijie
- * @date Feb 18, 2016 2:36:35 PM
+ * Build a class from code
  * 
+ * @author Henry Huang <a href="mailto:h1886@outlook.com">h1886@outlook.com</a>
+ * @version 8:52:50 PM Nov 25, 2016
+ *
  */
 public class ClassGenerator {
 
@@ -25,27 +25,24 @@ public class ClassGenerator {
 	public ClassGenerator() {
 		this(".");
 	}
-	
+
 	/**
-	 * class root dir
-	 *
 	 * @param classRootDir
+	 *            class root dir
 	 */
 	public ClassGenerator(String classRootDir) {
 		this.classRootDir = classRootDir;
 	}
-
+	
 	/**
 	 * 
-	 *
-	 * @param classFullName
-	 * @param code
-	 * @return
-	 * @throws MalformedURLException
-	 * @throws ClassNotFoundException
+	 * @param classFullName the class's full name
+	 * @param code the java source code that you want to product class
+	 * @return the class
+	 * @throws MalformedURLException see {@link URL#toURI()}
+	 * @throws ClassNotFoundException see {@link Class#forName(String, boolean, ClassLoader)}
 	 */
-	public Class<?> generate(String classFullName, String code)
-			throws MalformedURLException, ClassNotFoundException {
+	public Class<?> generate(String classFullName, String code) throws MalformedURLException, ClassNotFoundException {
 
 		JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
 		JavaFileObject fileObject = new JavaSourceFromString(classFullName, code);
@@ -58,7 +55,7 @@ public class ClassGenerator {
 		Iterable<? extends JavaFileObject> compilationUnits = Arrays.asList(fileObject);
 		CompilationTask task = compiler.getTask(null, null, null, options, null, compilationUnits);
 
-		// 产生class
+		// generate class
 		boolean success = task.call();
 		if (success) {
 			File root = new File(classRootDir);

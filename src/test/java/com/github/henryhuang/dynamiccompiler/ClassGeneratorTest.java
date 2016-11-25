@@ -1,4 +1,4 @@
-package cnhalo.dynamiccompiler;
+package com.github.henryhuang.dynamiccompiler;
 
 import static org.junit.Assert.*;
 
@@ -11,12 +11,13 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.github.henryhuang.dynamiccompiler.ClassGenerator;
+
 /**
- *
- *
- * @author HuangYijie
- * @date Feb 16, 2016 10:33:44 AM
  * 
+ * @author Henry Huang <a href="mailto:h1886@outlook.com">h1886@outlook.com</a>
+ * @version 9:09:19 PM Nov 25, 2016
+ *
  */
 public class ClassGeneratorTest {
 
