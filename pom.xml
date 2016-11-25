@@ -4,13 +4,27 @@
 
 	<groupId>com.github.henryhuang</groupId>
 	<artifactId>dynamiccompiler</artifactId>
-	<version>0.1.0-SNAPSHOT</version>
+	<version>0.1.0</version>
 	<packaging>jar</packaging>
 
 	<name>dynamiccompiler</name>
 	<description>Compile java code at runtime dynamically.</description>
 	<url>https://github.com/henryhuang/dynamiccompiler</url>
 
+	<licenses>
+		<license>
+			<name>The MIT License</name>
+			<url>https://github.com/henryhuang/dynamiccompiler/blob/master/LICENSE</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>henryhuang</name>
+			<email>h1886@outlook.com</email>
+		</developer>
+	</developers>
+	
 	<scm>
 		<url>git@github.com:henryhuang/dynamiccompiler.git</url>
 		<connection>scm:git:git@github.com:henryhuang/dynamiccompiler.git</connection>
