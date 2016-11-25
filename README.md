@@ -26,7 +26,11 @@ Compile java code at runtime dynamically.
 
 ``` java
 
-// TODO
+ClassGenerator builder = new ClassGenerator(".");
+Class<?> testClass = builder.generate("Test",
+		"public class Test{public static void main(String[] args){System.out.println(\"Test!\");}}");
+String[] params = null;
+testClass.getMethod("main", String[].class).invoke(null, (Object) params);
 	
 ```
 
